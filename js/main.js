@@ -34,6 +34,8 @@
 
 
 // ***Pari e Dispari***
+
+
 // creo prompt per memorizzare i dati inseriti dall'utente
 let sceltaUtente = prompt("Ciao, scegli se pari o dispari")
 console.log(sceltaUtente)
@@ -63,9 +65,19 @@ function getRandomNumber() {
     return numero;
 }
 
+// creo funzione per stabilire se la somma dei due numeri è pari e dispari
+function pariDispari(sommaNumeri) {
+    if (sommaNumeri % 2 == 0) {
+        return true
+    } 
+    return false
+}
 
-
-
+let risultatoFinale = pariDispari(sommaPlayers)
+console.log("il risultato finale è ",risultatoFinale)    
+    
+    
+    
 
 
 
