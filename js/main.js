@@ -35,22 +35,49 @@
 
 // ***Pari e Dispari***
 
-
 // creo prompt per memorizzare i dati inseriti dall'utente
 let sceltaUtente = prompt("Ciao, scegli se pari o dispari")
-console.log(sceltaUtente)
-// uso parseInt per trasformare la stringa in numero
-let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
-console.log(numeroUtente)
-// uso isNan nel caso l'utente non abbia inserito un numero
-if (isNaN(numeroUtente)) {
-    alert("Quello che hai inserito, non è un numero!")
+sceltaUtente = sceltaUtente.toLowerCase();
+let pariDispariUtente;
+
+// condizione per assicurarmi che l'utente inserisca i dati in maniera corretta
+if (sceltaUtente == "pari") {
+    pariDispariUtente = true
+} else if(sceltaUtente == "dispari") {
+    pariDispariUtente = false
+} else {
+    pariDispariUtente = null
 }
 
+while (pariDispariUtente == null ) {
+    alert("Non hai scelto nè pari nè dispari, ritenta!")
+    sceltaUtente = prompt("Ciao, scegli se pari o dispari")
+    sceltaUtente = sceltaUtente.toLowerCase();
+    if (sceltaUtente == "pari") {
+        pariDispariUtente = true
+    } else if(sceltaUtente == "dispari") {
+        pariDispariUtente = false
+    } else {
+        pariDispariUtente = null
+    }
+}
+console.log("scelta utente",sceltaUtente)
+
+console.log("L'utente ha scelto ", pariDispariUtente)        
+
+// uso parseInt per trasformare la stringa in numero
+let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
+console.log("ok, hai inserito il seguente num", numeroUtente)
+// uso isNan nel caso l'utente non abbia inserito un numero
+while (isNaN(numeroUtente) || (numeroUtente < 1) || (numeroUtente > 5)) {
+    alert("Quello che hai inserito, non è un numero!")
+    numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));        
+}
+console.log("ora sì, hai inserito un numero, che è ", numeroUtente)
 
 
 let numeroComputer = getRandomNumber();
-console.log(numeroComputer)
+console.log("Il num che ha scelto il computer è ", numeroComputer)
 
 
 let sommaPlayers = (numeroUtente + numeroComputer)
@@ -74,7 +101,12 @@ function pariDispari(sommaNumeri) {
 }
 
 let risultatoFinale = pariDispari(sommaPlayers)
-console.log("il risultato finale è ",risultatoFinale)    
+console.log("il risultato finale è ", risultatoFinale) 
+
+// creo condizione per informare il player del risultato
+if (risultatoFinale) {
+        
+}
     
     
     
