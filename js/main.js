@@ -34,11 +34,37 @@
 
 
 // ***Pari e Dispari***
-
+// creo prompt per memorizzare i dati inseriti dall'utente
 let sceltaUtente = prompt("Ciao, scegli se pari o dispari")
 console.log(sceltaUtente)
+// uso parseInt per trasformare la stringa in numero
+let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
+console.log(numeroUtente)
+// uso isNan nel caso l'utente non abbia inserito un numero
+if (isNaN(numeroUtente)) {
+    alert("Quello che hai inserito, non è un numero!")
+}
 
-let numeroUtente = prompt("Scegli un numero da 1 a 5")
+
+
+let numeroComputer = getRandomNumber();
+console.log(numeroComputer)
+
+
+let sommaPlayers = (numeroUtente + numeroComputer)
+console.log("somma players",sommaPlayers)
+
+
+// creo funzione per numero random
+function getRandomNumber() {   
+
+    let numero = Math.floor((Math.random() * 5) + 1);
+    // console.log(numero)
+    return numero;
+}
+
+
+
 
 
 
