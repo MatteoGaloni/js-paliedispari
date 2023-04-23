@@ -70,7 +70,7 @@ let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("ok, hai inserito il seguente num", numeroUtente)
 // uso isNan nel caso l'utente non abbia inserito un numero
 while (isNaN(numeroUtente) || (numeroUtente < 1) || (numeroUtente > 5)) {
-    alert("Quello che hai inserito, non è un numero!")
+    alert("Quello che hai inserito non è un numero, o non è un numero compreso tra 1 e 5!")
     numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));        
 }
 console.log("ora sì, hai inserito un numero, che è ", numeroUtente)
@@ -80,11 +80,12 @@ console.log("ora sì, hai inserito un numero, che è ", numeroUtente)
 // creo numero randomico invoncando la funzione apposita
 let numeroComputer = getRandomNumber();
 console.log("Il num che ha scelto il computer è ", numeroComputer)
-alert("Il num che ha scelto il computer è ", numeroComputer)
+alert("Il num che ha scelto il computer è "+numeroComputer)
 
 
 let sommaPlayers = (numeroUtente + numeroComputer)
 console.log("somma players",sommaPlayers)
+alert("La somma dei due numeri è "+sommaPlayers)
 
 // creo funzione per numero random approssimato e compreso tra 1 e 5
 function getRandomNumber() {  
