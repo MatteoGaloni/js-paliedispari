@@ -35,7 +35,7 @@
 
 // ***Pari e Dispari***
 
-// creo prompt per memorizzare i dati inseriti dall'utente
+// creo prompt per memorizzare i dati inseriti dall'utente(scelta pari/dispari)
 let sceltaUtente = prompt("Ciao, scegli se pari o dispari")
 sceltaUtente = sceltaUtente.toLowerCase();
 let pariDispariUtente;
@@ -65,7 +65,7 @@ console.log("scelta utente",sceltaUtente)
 
 console.log("L'utente ha scelto ", pariDispariUtente)        
 
-// uso parseInt per trasformare la stringa in numero
+// creo prompt per memorizzare il num scelto e uso parseInt per trasformare la stringa in numero
 let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("ok, hai inserito il seguente num", numeroUtente)
 // uso isNan nel caso l'utente non abbia inserito un numero
@@ -76,17 +76,18 @@ while (isNaN(numeroUtente) || (numeroUtente < 1) || (numeroUtente > 5)) {
 console.log("ora sì, hai inserito un numero, che è ", numeroUtente)
 
 
+
+// creo numero randomico invoncando la funzione apposita
 let numeroComputer = getRandomNumber();
 console.log("Il num che ha scelto il computer è ", numeroComputer)
+alert("Il num che ha scelto il computer è ", numeroComputer)
 
 
 let sommaPlayers = (numeroUtente + numeroComputer)
 console.log("somma players",sommaPlayers)
 
-
-// creo funzione per numero random
-function getRandomNumber() {   
-
+// creo funzione per numero random approssimato e compreso tra 1 e 5
+function getRandomNumber() {  
     let numero = Math.floor((Math.random() * 5) + 1);
     // console.log(numero)
     return numero;
@@ -100,13 +101,23 @@ function pariDispari(sommaNumeri) {
     return false
 }
 
+
 let risultatoFinale = pariDispari(sommaPlayers)
 console.log("il risultato finale è ", risultatoFinale) 
 
 // creo condizione per informare il player del risultato
-if (risultatoFinale) {
-        
+if (risultatoFinale == pariDispariUtente) {
+    alert("Complimenti, hai vinto!")
+} else {
+    alert("Mi dispiace, hai perso!")
 }
+
+
+
+
+    
+        
+
     
     
     
