@@ -1,38 +1,43 @@
 // ***PALIDROMA***
 
 // ************Variables**********
-// let parola;
-// parola = prompt("Inserisci una parola")
-// let parolaReverse = ""
-// // ****provo a passare parola come argomento****
-// let risultato = ispalindromo(parola);
-// console.log(risultato)
-// // console.log(risultato);
-
-// // **********Condition********
-
-// if (risultato === true) {
-//     alert("La parola che hai inserito è un palindromo")
-// } else {
-//     alert("Mi dispiace, la parola che hai inserito non è un palindromo")
+let parola;
+parola = prompt("Inserisci una parola")
+// while (parola == isNaN) {
+//     alert("Devi inserire una parola")
+// parola = prompt("Inserisci una parola")    
 // }
 
-// // ************Function**************
+let parolaReverse = ""
+// ****provo a passare parola come argomento****
+let risultato = ispalindromo(parola);
+console.log(risultato)
+// console.log(risultato);
 
-// function ispalindromo(word) {
-//     for (let c = word.length - 1; c >= 0; c--) {
-//         console.log(c)
-//         parolaReverse += parola[c]
-//     }
-//     // console.log(parolaReverse)
-//     if (parola == parolaReverse) {
-//         return true
-//         // risultato = alert("La parola è un palindromo")
-//     }
-//     return false
-// }
+// **********Condition********
 
+if (risultato === true) {
+    alert("La parola che hai inserito è un palindromo")
+} else {
+    alert("Mi dispiace, la parola che hai inserito non è un palindromo")
+}
 
+// ************Function**************
+
+function ispalindromo(word) {
+    for (let c = word.length - 1; c >= 0; c--) {
+        console.log(c)
+        parolaReverse += parola[c]
+    }
+    // console.log(parolaReverse)
+    if (parola == parolaReverse) {
+        return true
+        // risultato = alert("La parola è un palindromo")
+    }
+    return false
+}
+
+// *********************************************************************************
 // ***Pari e Dispari***
 
 // creo prompt per memorizzare i dati inseriti dall'utente(scelta pari/dispari)
@@ -70,7 +75,7 @@ let numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("ok, hai inserito il seguente num", numeroUtente)
 // uso isNan nel caso l'utente non abbia inserito un numero
 while (isNaN(numeroUtente) || (numeroUtente < 1) || (numeroUtente > 5)) {
-    alert("Quello che hai inserito non è un numero, o non è un numero compreso tra 1 e 5!")
+    alert("Quello che hai inserito non è un numero o non è un numero compreso tra 1 e 5!")
     numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));        
 }
 console.log("ora sì, hai inserito un numero, che è ", numeroUtente)
